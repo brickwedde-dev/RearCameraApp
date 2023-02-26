@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.brickwedde.ReverseCamApp
+package dev.brickwedde.RearCameraApp
 
 import android.content.Intent
 import android.os.Bundle
@@ -21,7 +21,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import dev.brickwedde.ReverseCamApp.R
+import dev.brickwedde.RearCameraApp.R
 
 /** Splash activity
  *

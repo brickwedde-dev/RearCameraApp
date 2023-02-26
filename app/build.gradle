@@ -6,7 +6,7 @@ plugins {
 android {
     compileSdkVersion 31
     defaultConfig {
-        applicationId "dev.brickwedde.ReverseCamApp"
+        applicationId "dev.brickwedde.RearCameraApp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.versionTarget
         versionCode rootProject.ext.versionCode

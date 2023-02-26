@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.brickwedde.ReverseCamApp
+package dev.brickwedde.RearCameraApp
 
 import android.Manifest.permission.*
 import android.os.Bundle
@@ -23,7 +23,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.PermissionChecker
 import androidx.fragment.app.Fragment
 import com.gyf.immersionbar.ImmersionBar
-import dev.brickwedde.ReverseCamApp.databinding.ActivityMainBinding
+import dev.brickwedde.RearCameraApp.databinding.ActivityMainBinding
 import com.jiangdg.ausbc.utils.ToastUtils
 import com.jiangdg.ausbc.utils.Utils
 

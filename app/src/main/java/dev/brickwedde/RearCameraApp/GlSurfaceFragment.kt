@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.brickwedde.ReverseCamApp
+package dev.brickwedde.RearCameraApp
 
 import android.graphics.SurfaceTexture
 import android.opengl.GLES20
@@ -28,7 +28,7 @@ import com.jiangdg.ausbc.camera.bean.CameraRequest
 import com.jiangdg.ausbc.utils.Logger
 import com.jiangdg.ausbc.utils.ToastUtils
 import com.jiangdg.ausbc.widget.AspectRatioGLSurfaceView
-import dev.brickwedde.ReverseCamApp.databinding.FragmentGlsurfaceBinding
+import dev.brickwedde.RearCameraApp.databinding.FragmentGlsurfaceBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

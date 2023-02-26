@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.brickwedde.ReverseCamApp
+package dev.brickwedde.RearCameraApp
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -34,7 +34,7 @@ import android.widget.PopupWindow
 import androidx.lifecycle.lifecycleScope
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.list.listItemsSingleChoice
-import dev.brickwedde.ReverseCamApp.databinding.FragmentDemoBinding
+import dev.brickwedde.RearCameraApp.databinding.FragmentDemoBinding
 import com.jiangdg.ausbc.MultiCameraClient
 import com.jiangdg.ausbc.base.CameraFragment
 import com.jiangdg.ausbc.callback.ICameraStateCallBack
