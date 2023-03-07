@@ -27,20 +27,15 @@
         android:theme="@style/Theme.ClinkCameraDemo"
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true">
-        <activity
-            android:name=".SplashActivity"
-            android:exported="true"
-            android:theme="@style/SplashActivityStyle"
-            android:screenOrientation="fullSensor">
+
+        <activity android:name=".MainActivity"
+            android:theme="@style/Theme.ClinkCameraDemo.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity"
-            android:theme="@style/Theme.ClinkCameraDemo.NoActionBar" />
     </application>
 
 </manifest>

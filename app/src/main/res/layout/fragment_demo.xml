@@ -1,128 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <FrameLayout
         android:id="@+id/cameraViewContainer"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
         android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarBg" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <ImageView
         android:id="@+id/uvcLogoIv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:src="@mipmap/ic_uvc"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cameraViewContainer" />
-
-    <View
-        android:id="@+id/toolbarBg"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/settingsBtn"
-        style="@style/Camera2TopButtonStyle"
-        android:src="@mipmap/camera_toolbar_more"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbarBg"
-        app:layout_constraintEnd_toStartOf="@id/cameraTypeBtn"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="@id/toolbarBg"
-        app:layout_constraintTop_toTopOf="@id/toolbarBg" />
-
-    <ImageView
-        android:id="@+id/cameraTypeBtn"
-        style="@style/Camera2TopButtonStyle"
-        android:src="@mipmap/camera_toolbar_type"
-        app:layout_constraintBottom_toTopOf="@id/toolbarBottomBarrier"
-        app:layout_constraintEnd_toStartOf="@id/resolutionBtn"
-        app:layout_constraintStart_toEndOf="@id/settingsBtn"
-        app:layout_constraintTop_toTopOf="@id/toolbarBg"/>
-
-    <ImageView
-        android:id="@+id/resolutionBtn"
-        style="@style/Camera2TopButtonStyle"
-        android:src="@mipmap/camera_resolution"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbarBg"
-        app:layout_constraintEnd_toEndOf="@id/toolbarBg"
-        app:layout_constraintStart_toEndOf="@id/cameraTypeBtn"
-        app:layout_constraintTop_toTopOf="@id/toolbarBg" />
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/toolbarBottomBarrier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="bottom"
-        app:constraint_referenced_ids="settingsBtn,cameraTypeBtn,resolutionBtn"
-        tools:layout_editor_absoluteY="50dp" />
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/toolbarGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="toolbarBottomBarrier, settingsBtn,cameraTypeBtn,resolutionBtn" />
-
-    <ViewStub
-        android:id="@+id/takePictureTipViewStub"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout="@layout/layout_tip_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarBg" />
+        android:visibility="visible"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/recTimerLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
         <ImageView
-            android:id="@+id/recStateIv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/camera_rec_red_point"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/recTimeTv"
-            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/resolutionBtn"
+            style="@style/Camera2TopButtonStyle"
+            android:src="@mipmap/camera_resolution"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/recTimeTv"
+            android:id="@+id/frameRateTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:gravity="center"
-            android:text="00:00"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/recStateIv"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/frameRateTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cameraViewContainer" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
