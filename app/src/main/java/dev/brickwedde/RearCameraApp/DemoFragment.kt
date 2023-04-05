@@ -39,6 +39,7 @@ import java.util.*
  */
 class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.OnViewClickListener {
 
+    private var triedSwitch: Boolean = false;
     private lateinit var mViewBinding: FragmentDemoBinding
 
     override fun initView() {
@@ -84,14 +85,19 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
         mViewBinding.frameRateTv.visibility = View.VISIBLE
         ToastUtils.show("camera opened success")
 
-        if (getCurrentCamera()?.getCameraRequest()?.previewHeight != 576 && getCurrentCamera()?.getCameraRequest()?.previewWidth != 720) {
-            var s = getAllPreviewSizes();
-            if (s != null) {
-                for (index in (0 until s.size)) {
-                    if (s.get(index).height == 576 && s.get(index).width == 720) {
-                        activity?.runOnUiThread(Runnable {
-                            updateResolution(720, 576);
-                        })
+        if (!triedSwitch) {
+            triedSwitch = true;
+            if (getCurrentCamera()?.getCameraRequest()?.previewHeight != 480 && getCurrentCamera()?.getCameraRequest()?.previewWidth != 720) {
+                var s = getAllPreviewSizes();
+                if (s != null) {
+                    for (index in (0 until s.size)) {
+                        if (s.get(index).height == 480 && s.get(index).width == 720) {
+                            activity?.runOnUiThread(Runnable {
+                                ToastUtils.show("trying switch 720x480")
+                                updateResolution(720, 480);
+                            })
+                            break;
+                        }
                     }
                 }
             }

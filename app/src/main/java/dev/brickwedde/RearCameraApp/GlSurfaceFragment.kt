@@ -66,7 +66,10 @@ class GlSurfaceFragment: BaseFragment() {
                     }
                 }
 
-                mCamera.startPreview(getCameraRequest(), surface)
+                var req = getCameraRequest();
+                req.previewWidth = 720;
+                req.previewHeight = 480;
+                mCamera.startPreview(req, surface)
             }
 
             override fun onSurfaceDestroyed() {
@@ -134,7 +137,7 @@ class GlSurfaceFragment: BaseFragment() {
 
     companion object {
         private const val TAG = "GlSurfaceFragment"
-        private const val CAMERA_PREVIEW_WIDTH = 1280
-        private const val CAMERA_PREVIEW_HEIGHT = 720
+        private const val CAMERA_PREVIEW_WIDTH = 720
+        private const val CAMERA_PREVIEW_HEIGHT = 480
     }
 }
