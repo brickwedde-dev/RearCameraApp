@@ -4,21 +4,17 @@ import android.animation.Animator;
 import android.graphics.SurfaceTexture;
 import android.hardware.usb.UsbDevice;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.Surface;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 
 
 import com.serenegiant.common.BaseActivity;
-import com.serenegiant.usb.CameraDialog;
 import com.serenegiant.usb.DeviceFilter;
 import com.serenegiant.usb.USBMonitor;
 import com.serenegiant.usb.UVCCamera;
@@ -28,9 +24,7 @@ import com.serenegiant.widget.CameraViewInterface;
 
 import java.util.List;
 
-import kotlinx.coroutines.android.HandlerDispatcher;
-
-public final class MainActivity extends BaseActivity implements CameraDialog.CameraDialogParent {
+public final class MainActivity extends BaseActivity {
         private static final boolean DEBUG = true;	// TODO set false on release
         private static final String TAG = "MainActivity";
 
@@ -83,7 +77,6 @@ public final class MainActivity extends BaseActivity implements CameraDialog.Cam
         private ImageButton mCaptureButton;
 
         private View mBrightnessButton, mContrastButton;
-        private View mResetButton;
         private View mToolsLayout, mValueLayout;
         private SeekBar mSettingSeekbar;
 
@@ -104,8 +97,6 @@ public final class MainActivity extends BaseActivity implements CameraDialog.Cam
             mBrightnessButton.setOnClickListener(mOnClickListener);
             mContrastButton = findViewById(R.id.contrast_button);
             mContrastButton.setOnClickListener(mOnClickListener);
-            mResetButton = findViewById(R.id.reset_button);
-            mResetButton.setOnClickListener(mOnClickListener);
             mSettingSeekbar = (SeekBar)findViewById(R.id.setting_seekbar);
             mSettingSeekbar.setOnSeekBarChangeListener(mOnSeekBarChangeListener);
 
@@ -135,6 +126,12 @@ public final class MainActivity extends BaseActivity implements CameraDialog.Cam
             if (mUVCCameraView != null)
                 mUVCCameraView.onPause();
             setCameraButton(false);
+
+            if (mUSBMonitor.isRegistered()) {
+                mUSBMonitor.unregister();
+            }
+            attached = false;
+
             super.onStop();
         }
 
@@ -237,7 +234,7 @@ public final class MainActivity extends BaseActivity implements CameraDialog.Cam
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    mCaptureButton.setVisibility(View.VISIBLE);
+                    //mCaptureButton.setVisibility(View.VISIBLE);
                 }
             });
             updateItems();
@@ -281,23 +278,6 @@ public final class MainActivity extends BaseActivity implements CameraDialog.Cam
                 setCameraButton(false);
             }
         };
-
-        /**
-         * to access from CameraDialog
-         * @return
-         */
-        @Override
-        public USBMonitor getUSBMonitor() {
-            return mUSBMonitor;
-        }
-
-        @Override
-        public void onDialogResult(boolean canceled) {
-            if (DEBUG) Log.v(TAG, "onDialogResult:canceled=" + canceled);
-            if (canceled) {
-                setCameraButton(false);
-            }
-        }
 
         //================================================================================
         private boolean isActive() {
