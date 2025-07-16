@@ -1,5 +1,37 @@
-<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:tint="#FFFFFF" android:viewportHeight="24" android:viewportWidth="24" android:width="24dp">
-      
-    <path android:fillColor="@android:color/white" android:pathData="M18,10.48V6c0,-1.1 -0.9,-2 -2,-2H4C2.9,4 2,4.9 2,6v12c0,1.1 0.9,2 2,2h12c1.1,0 2,-0.9 2,-2v-4.48l4,3.98v-11L18,10.48zM5,16l2.38,-3.17L9,15l2.62,-3.5L15,16H5z"/>
-    
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M5,16v-1H4c-0.55,0 -1,-0.45 -1,-1v-3c0,-0.61 0.28,-1.16 0.72,-1.52L5.29,6.71C5.92,6.27 6.68,6 7.5,6h9c0.82,0 1.58,0.27 2.21,0.71l1.57,2.77C20.72,9.84 21,10.39 21,11v3c0,0.55 -0.45,1 -1,1h-1v1c0,0.55 -0.45,1 -1,1s-1,-0.45 -1,-1v-1H7v1c0,0.55 -0.45,1 -1,1s-1,-0.45 -1,-1zm0,-3h14v-2.5c0,-0.19 -0.05,-0.37 -0.14,-0.53L17.29,7.71C16.92,7.27 16.47,7 16,7H8c-0.47,0 -0.92,0.27 -1.29,0.71L5.14,9.97C5.05,10.13 5,10.31 5,10.5V13z"/>
+
+    <!-- Kamera unter der Scheibe -->
+    <path
+        android:fillColor="#00ACC1"
+        android:pathData="M23,22 a1,1 0 1,0 2,0 a1,1 0 1,0 -2,0" />
+
+    <!-- Rote Linie (nah, kurz) -->
+    <path
+        android:strokeColor="#F44336"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M18,34 L30,34" />
+
+    <!-- Gelbe Linie (mittel) -->
+    <path
+        android:strokeColor="#FFEB3B"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M12,38 L36,38" />
+
+    <!-- Grüne Linie (fern, lang) -->
+    <path
+        android:strokeColor="#4CAF50"
+        android:strokeWidth="1"
+        android:strokeLineCap="round"
+        android:pathData="M6,42 L42,42" />
+
 </vector>
